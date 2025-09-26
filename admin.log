@@ -1,0 +1,53 @@
+
+> georgia-connects-hub-admin@0.0.0 dev
+> vite
+
+
+  VITE v5.4.20  ready in 165 ms
+
+  ➜  Local:   http://localhost:8081/
+  ➜  Network: http://192.168.1.177:8081/
+8:16:33 PM [vite] hmr update /src/App.tsx, /src/index.css
+8:16:36 PM [vite] hmr update /src/App.tsx, /src/index.css
+8:16:36 PM [vite] Internal server error: Failed to resolve import "@/components/ui/table" from "src/pages/BadgeManagement.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/src/pages/BadgeManagement.tsx:20:7
+  26 |  import { Input } from "@/components/ui/input";
+  27 |  import { Badge } from "@/components/ui/badge";
+  28 |  import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+     |                                                                                 ^
+  29 |  import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+  30 |  import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+      at TransformPluginContext._formatError (file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at async file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+8:16:36 PM [vite] Pre-transform error: Failed to resolve import "@/components/ui/table" from "src/pages/BadgeManagement.tsx". Does the file exist?
+8:16:44 PM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+8:16:49 PM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+8:17:03 PM [vite] hmr update /src/App.tsx, /src/index.css
+8:17:03 PM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+8:17:03 PM [vite] hmr update /src/index.css, /src/App.tsx
+8:17:03 PM [vite] Pre-transform error: Failed to resolve import "@/components/ui/table" from "src/pages/BadgeManagement.tsx". Does the file exist?
+8:17:03 PM [vite] Internal server error: Failed to resolve import "@/components/ui/table" from "src/pages/BadgeManagement.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/src/pages/BadgeManagement.tsx:20:7
+  26 |  import { Input } from "@/components/ui/input";
+  27 |  import { Badge } from "@/components/ui/badge";
+  28 |  import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+     |                                                                                 ^
+  29 |  import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+  30 |  import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+      at TransformPluginContext._formatError (file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at async file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub-admin/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)

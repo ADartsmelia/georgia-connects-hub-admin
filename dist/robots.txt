@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# Admin dashboard should not be indexed by search engines
