@@ -1,0 +1,25 @@
+
+> georgia-connects-hub-admin@0.0.0 dev
+> vite
+
+
+  VITE v5.4.20  ready in 159 ms
+
+  ➜  Local:   http://localhost:8081/
+  ➜  Network: http://192.168.20.54:8081/
+10:51:35 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+10:59:21 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+10:59:40 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+10:59:59 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+11:00:14 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+11:00:22 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+11:00:29 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+11:00:39 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+11:12:02 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+11:12:11 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+11:12:18 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+11:12:33 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+11:12:47 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+11:13:09 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+11:18:25 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css
+11:18:47 AM [vite] hmr update /src/pages/Agenda.tsx, /src/index.css

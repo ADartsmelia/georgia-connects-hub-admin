@@ -1,0 +1,56 @@
+
+> vite_react_shadcn_ts@0.0.0 dev
+> vite
+
+
+  VITE v5.4.19  ready in 177 ms
+
+  ➜  Local:   http://localhost:8080/
+  ➜  Network: http://192.168.20.54:8080/
+11:00:54 AM [vite] hmr update /src/pages/ResetPassword.tsx, /src/index.css
+11:01:02 AM [vite] hmr update /src/pages/ResetPassword.tsx, /src/index.css
+11:03:26 AM [vite] hmr update /src/pages/Sponsors.tsx, /src/index.css
+11:03:44 AM [vite] hmr update /src/pages/Sponsors.tsx, /src/index.css
+11:05:38 AM [vite] hmr update /src/pages/Home.tsx, /src/index.css
+11:06:04 AM [vite] hmr update /src/pages/Home.tsx, /src/index.css
+11:08:10 AM [vite] hmr update /src/pages/Home.tsx, /src/index.css
+11:08:28 AM [vite] hmr update /src/pages/Home.tsx, /src/index.css
+11:13:25 AM [vite] hmr update /src/pages/Sponsors.tsx, /src/index.css
+Error processing file src/pages/Sponsors.tsx: SyntaxError: Expected corresponding JSX closing tag for <div>. (170:20)
+    at constructor (/Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub/node_modules/@babel/parser/lib/index.js:362:19)
+    at TypeScriptParserMixin.raise (/Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub/node_modules/@babel/parser/lib/index.js:3259:19)
+    at TypeScriptParserMixin.jsxParseElementAt (/Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub/node_modules/@babel/parser/lib/index.js:6774:16)
+    at TypeScriptParserMixin.jsxParseElementAt (/Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub/node_modules/@babel/parser/lib/index.js:6745:32)
+    at TypeScriptParserMixin.jsxParseElementAt (/Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub/node_modules/@babel/parser/lib/index.js:6745:32)
+    at TypeScriptParserMixin.jsxParseElement (/Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub/node_modules/@babel/parser/lib/index.js:6796:17)
+    at TypeScriptParserMixin.parseExprAtom (/Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub/node_modules/@babel/parser/lib/index.js:6806:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub/node_modules/@babel/parser/lib/index.js:10592:23)
+    at TypeScriptParserMixin.parseUpdate (/Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub/node_modules/@babel/parser/lib/index.js:10577:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub/node_modules/@babel/parser/lib/index.js:10557:23) {
+  code: 'BABEL_PARSER_SYNTAX_ERROR',
+  reasonCode: 'MissingClosingTagElement',
+  loc: Position { line: 170, column: 20, index: 6616 },
+  pos: 6616,
+  syntaxPlugin: 'jsx'
+}
+11:13:25 AM [vite] Internal server error:   x Expected '</', got 'jsx text (
+  |                   )'
+     ,-[/Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub/src/pages/Sponsors.tsx:170:1]
+ 167 |                               Visit Website
+ 168 |                             </Button>
+ 169 |                           </div>
+ 170 | ,->                     </CardContent>
+ 171 | `->                   </Card>
+ 172 |                     ))}
+ 173 |                 </div>
+ 174 |               </div>
+     `----
+
+
+Caused by:
+    Syntax Error
+  Plugin: vite:react-swc
+  File: /Users/anzordartsmelia/georgia-connects-hub-main/georgia-connects-hub/src/pages/Sponsors.tsx
+  
+11:13:33 AM [vite] hmr update /src/pages/Sponsors.tsx, /src/index.css
+11:13:54 AM [vite] hmr update /src/pages/Sponsors.tsx, /src/index.css

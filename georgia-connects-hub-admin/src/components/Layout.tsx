@@ -10,6 +10,8 @@ import {
   Menu,
   X,
   CalendarDays,
+  QrCode,
+  ScanLine,
 } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -29,10 +31,18 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: "Agenda", href: "/admin/agenda", icon: CalendarDays },
     { name: "Check-ins", href: "/admin/checkins", icon: Calendar },
     { name: "Badges", href: "/admin/badges", icon: Award },
+    { name: "QR Generator", href: "/admin/qr-generator", icon: QrCode },
+    { name: "QR Scanner", href: "/admin/qr-scanner", icon: ScanLine },
+    { name: "QR Management", href: "/admin/qr-management", icon: QrCode },
   ];
 
   const handleLogout = async () => {
     await logout();
+  };
+
+  const handleNavClick = () => {
+    // Close mobile sidebar when navigation item is clicked
+    setSidebarOpen(false);
   };
 
   return (
@@ -44,48 +54,73 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         }`}
       >
         <div
-          className="fixed inset-0 bg-gray-600 bg-opacity-75"
+          className="fixed inset-0 bg-gray-600 bg-opacity-75 transition-opacity"
           onClick={() => setSidebarOpen(false)}
         />
-        <div className="relative flex w-full max-w-xs flex-1 flex-col bg-white shadow-xl">
+        <div className="relative flex w-full max-w-xs flex-1 flex-col bg-white shadow-xl h-full">
           <div className="absolute top-0 right-0 -mr-12 pt-2">
             <button
               type="button"
-              className="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white bg-gray-600"
               onClick={() => setSidebarOpen(false)}
             >
               <X className="h-6 w-6 text-white" />
             </button>
           </div>
-          <div className="h-0 flex-1 overflow-y-auto pt-5 pb-4">
-            <div className="flex flex-shrink-0 items-center px-4">
+          <div className="flex-1 overflow-y-auto pt-5 pb-4">
+            <div className="flex flex-shrink-0 items-center px-4 mb-4">
               <h1 className="text-xl font-bold text-gray-900">Admin Panel</h1>
             </div>
-            <nav className="mt-5 space-y-1 px-2">
+            <nav className="mt-2 space-y-1 px-2">
               {navigation.map((item) => {
                 const isActive = location.pathname === item.href;
                 return (
                   <Link
                     key={item.name}
                     to={item.href}
+                    onClick={handleNavClick}
                     className={`${
                       isActive
                         ? "bg-gray-900 text-white shadow-sm"
                         : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-                    } group flex items-center px-3 py-2 text-base font-medium rounded-lg transition-colors duration-200`}
+                    } group flex items-center px-4 py-3 text-base font-medium rounded-lg transition-colors duration-200`}
                   >
                     <item.icon
                       className={`${
                         isActive
                           ? "text-white"
                           : "text-gray-400 group-hover:text-gray-500"
-                      } mr-4 h-6 w-6 flex-shrink-0`}
+                      } mr-3 h-6 w-6 flex-shrink-0`}
                     />
                     {item.name}
                   </Link>
                 );
               })}
             </nav>
+          </div>
+
+          {/* Mobile User Info and Logout */}
+          <div className="flex-shrink-0 border-t border-gray-200 p-4 bg-gray-50">
+            <div className="flex items-center mb-3">
+              <div className="flex-1">
+                <p className="text-sm font-medium text-gray-900">
+                  {user?.firstName} {user?.lastName}
+                </p>
+                <p className="text-xs text-gray-500">
+                  {user?.isSuperAdmin ? "Super Admin" : "Admin"}
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={() => {
+                handleLogout();
+                setSidebarOpen(false);
+              }}
+              className="flex w-full items-center rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+            >
+              <LogOut className="mr-3 h-5 w-5 flex-shrink-0 text-gray-400" />
+              Sign out
+            </button>
           </div>
         </div>
       </div>
@@ -149,26 +184,30 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       {/* Main content */}
       <div className="lg:pl-64">
-        <div className="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white shadow lg:hidden">
+        {/* Mobile header */}
+        <div className="sticky top-0 z-10 flex h-14 sm:h-16 flex-shrink-0 bg-white shadow-sm lg:hidden border-b border-gray-200">
           <button
             type="button"
-            className="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 lg:hidden"
+            className="px-3 sm:px-4 text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors"
             onClick={() => setSidebarOpen(true)}
           >
             <Menu className="h-6 w-6" />
           </button>
-          <div className="flex flex-1 justify-between px-4">
-            <div className="flex flex-1">
-              <h1 className="text-lg font-semibold text-gray-900 self-center">
-                Admin Panel
-              </h1>
+          <div className="flex flex-1 items-center justify-between px-3 sm:px-4">
+            <h1 className="text-base sm:text-lg font-semibold text-gray-900 truncate">
+              Admin Panel
+            </h1>
+            <div className="flex items-center gap-2">
+              <span className="text-xs sm:text-sm text-gray-600 hidden sm:inline">
+                {user?.firstName}
+              </span>
             </div>
           </div>
         </div>
 
         <main className="flex-1">
-          <div className="py-6">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="py-4 sm:py-6">
+            <div className="mx-auto max-w-7xl px-3 sm:px-4 lg:px-8">
               {children}
             </div>
           </div>

@@ -1,0 +1,22 @@
+
+> georgia-qr-generator@1.0.0 dev
+> vite
+
+
+  VITE v5.4.20  ready in 168 ms
+
+  ➜  Local:   http://localhost:5174/
+  ➜  Network: http://172.20.10.11:5174/
+9:53:37 AM [vite] page reload index.html
+9:53:38 AM [vite] changed tsconfig file detected: /Users/anzordartsmelia/georgia-connects-hub-main/georgia-qr-generator/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+9:53:38 AM [vite] vite.config.ts changed, restarting server...
+9:53:38 AM [vite] hmr update /src/App.tsx, /src/index.css
+9:53:38 AM [vite] page reload src/config.ts
+9:53:38 AM [vite] hmr update /src/index.css
+9:53:38 AM [vite] page reload src/main.tsx
+9:53:38 AM [vite] page reload tailwind.config.ts
+(!) Could not auto-determine entry point from rollupOptions or html files and there are no explicit optimizeDeps.include patterns. Skipping dependency pre-bundling.
+9:53:38 AM [vite] server restarted.
+
+  ➜  Local:   http://localhost:5174/
+  ➜  Network: use --host to expose

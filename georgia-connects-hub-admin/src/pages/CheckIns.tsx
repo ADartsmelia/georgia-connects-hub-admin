@@ -14,6 +14,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { checkInsAPI } from "@/lib/api";
+import { config } from "@/config/environment";
 
 interface AgendaEvent {
   id: string;
@@ -51,15 +52,12 @@ export const CheckIns: React.FC = () => {
       console.log("🔍 Fetching agenda events with check-in counts...");
 
       // Get agenda data from the agenda API
-      const agendaResponse = await fetch(
-        "http://localhost:3000/api/v1/admin/agenda",
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("admin_auth_token")}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const agendaResponse = await fetch(`${config.API_URL}/admin/agenda`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("admin_auth_token")}`,
+          "Content-Type": "application/json",
+        },
+      });
 
       const agendaData = await agendaResponse.json();
       console.log("📊 Agenda API response:", agendaData);

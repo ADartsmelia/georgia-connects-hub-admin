@@ -16,6 +16,6 @@ static_sites:
       - key: NODE_ENV
         value: production
       - key: VITE_API_URL
-        value: https://ntegeo.duckdns.org/api/v1
+        value: https://api.networkinggeorgia.com/api/v1
       - key: VITE_SOCKET_URL
-        value: https://ntegeo.duckdns.org
+        value: https://api.networkinggeorgia.com

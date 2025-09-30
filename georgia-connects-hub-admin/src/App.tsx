@@ -19,6 +19,9 @@ import { Posts } from "./pages/Posts";
 import Agenda from "./pages/Agenda";
 import { CheckIns } from "./pages/CheckIns";
 import { BadgeManagement } from "./pages/BadgeManagement";
+import QRScanner from "./pages/QRScanner";
+import QRManagement from "./pages/QRManagement";
+import QRGenerator from "./pages/QRGenerator";
 
 // Create a client
 const queryClient = new QueryClient({
@@ -135,6 +138,36 @@ const AppContent: React.FC = () => {
           <ProtectedRoute>
             <Layout>
               <BadgeManagement />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/qr-scanner"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <QRScanner />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/qr-management"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <QRManagement />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/qr-generator"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <QRGenerator />
             </Layout>
           </ProtectedRoute>
         }

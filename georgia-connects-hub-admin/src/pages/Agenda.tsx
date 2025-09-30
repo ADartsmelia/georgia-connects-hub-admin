@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Badge } from '../components/ui/badge';
-import { agendaAPI } from '../lib/api';
-import { Plus, Edit, Trash2, Save, X, Clock, CheckCircle } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Badge } from "../components/ui/badge";
+import { agendaAPI } from "../lib/api";
+import { Plus, Edit, Trash2, Save, X, Clock, CheckCircle } from "lucide-react";
+import { toast } from "sonner";
 
 interface AgendaItem {
   id: string;
@@ -27,13 +33,16 @@ export default function Agenda() {
   const [agenda, setAgenda] = useState<DayAgenda[]>([]);
   const [loading, setLoading] = useState(true);
   const [editingItem, setEditingItem] = useState<string | null>(null);
+  const [editingItemData, setEditingItemData] = useState<AgendaItem | null>(
+    null
+  );
   const [newItem, setNewItem] = useState<Partial<AgendaItem>>({
-    time: '',
-    title: '',
+    time: "",
+    title: "",
     requiresCheckIn: false,
     isParallel: false,
   });
-  const [selectedDay, setSelectedDay] = useState<string>('Day 1');
+  const [selectedDay, setSelectedDay] = useState<string>("Day 1");
 
   useEffect(() => {
     fetchAgenda();
@@ -47,7 +56,7 @@ export default function Agenda() {
         setAgenda(response.data);
       }
     } catch (error) {
-      console.error('Error fetching agenda:', error);
+      console.error("Error fetching agenda:", error);
     } finally {
       setLoading(false);
     }
@@ -55,39 +64,64 @@ export default function Agenda() {
 
   const handleEdit = (item: AgendaItem) => {
     setEditingItem(item.id);
+    setEditingItemData({ ...item });
   };
 
-  const handleSave = async (item: AgendaItem) => {
+  const handleSave = async () => {
+    if (!editingItemData) return;
+
     try {
-      await agendaAPI.updateAgendaItem(item.id, item);
+      await agendaAPI.updateAgendaItem(editingItemData.id, editingItemData);
       setEditingItem(null);
+      setEditingItemData(null);
       fetchAgenda();
+      toast.success("Agenda item updated successfully!");
     } catch (error) {
-      console.error('Error updating agenda item:', error);
+      console.error("Error updating agenda item:", error);
+      toast.error("Failed to update agenda item");
     }
   };
 
+  const handleCancelEdit = () => {
+    setEditingItem(null);
+    setEditingItemData(null);
+  };
+
   const handleDelete = async (itemId: string) => {
-    if (window.confirm('Are you sure you want to delete this agenda item?')) {
+    if (window.confirm("Are you sure you want to delete this agenda item?")) {
       try {
         await agendaAPI.deleteAgendaItem(itemId);
         fetchAgenda();
+        toast.success("Agenda item deleted successfully!");
       } catch (error) {
-        console.error('Error deleting agenda item:', error);
+        console.error("Error deleting agenda item:", error);
+        toast.error("Failed to delete agenda item");
       }
     }
   };
 
   const handleAddItem = async () => {
-    if (!newItem.time || !newItem.title) return;
+    if (!newItem.time || !newItem.title) {
+      toast.error("Please fill in time and title");
+      return;
+    }
 
     try {
-      const dayData = agenda.find(d => d.day === selectedDay);
-      if (!dayData) return;
+      const dayData = agenda.find((d) => d.day === selectedDay);
+      if (!dayData) {
+        toast.error("Invalid day selected");
+        return;
+      }
 
-      const itemIndex = newItem.isParallel 
-        ? dayData.parallel.length 
-        : dayData.items.length;
+      // Calculate next available index by finding max itemIndex and adding 1
+      const relevantItems = newItem.isParallel
+        ? dayData.parallel
+        : dayData.items;
+      const maxIndex =
+        relevantItems.length > 0
+          ? Math.max(...relevantItems.map((item) => item.itemIndex))
+          : -1;
+      const itemIndex = maxIndex + 1;
 
       await agendaAPI.createAgendaItem({
         day: selectedDay,
@@ -99,16 +133,32 @@ export default function Agenda() {
         isActive: true,
       });
 
-      setNewItem({ time: '', title: '', requiresCheckIn: false, isParallel: false });
+      setNewItem({
+        time: "",
+        title: "",
+        requiresCheckIn: false,
+        isParallel: false,
+      });
       fetchAgenda();
-    } catch (error) {
-      console.error('Error creating agenda item:', error);
+      toast.success("Agenda item added successfully!");
+    } catch (error: any) {
+      console.error("Error creating agenda item:", error);
+      const message =
+        error.response?.data?.message || "Failed to add agenda item";
+      toast.error(message);
     }
   };
 
   const toggleCheckIn = async (item: AgendaItem) => {
-    const updatedItem = { ...item, requiresCheckIn: !item.requiresCheckIn };
-    await handleSave(updatedItem);
+    try {
+      const updatedItem = { ...item, requiresCheckIn: !item.requiresCheckIn };
+      await agendaAPI.updateAgendaItem(item.id, updatedItem);
+      fetchAgenda();
+      toast.success("Check-in status updated!");
+    } catch (error) {
+      console.error("Error updating check-in status:", error);
+      toast.error("Failed to update check-in status");
+    }
   };
 
   if (loading) {
@@ -122,7 +172,9 @@ export default function Agenda() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-foreground">Agenda Management</h1>
+        <h1 className="text-3xl font-bold text-foreground">
+          Agenda Management
+        </h1>
         <div className="flex items-center space-x-4">
           <select
             value={selectedDay}
@@ -147,41 +199,71 @@ export default function Agenda() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <Input
-              placeholder="Time (e.g., 09:00-10:00)"
-              value={newItem.time}
-              onChange={(e) => setNewItem({ ...newItem, time: e.target.value })}
-              className="bg-transparent"
-            />
-            <Input
-              placeholder="Title"
-              value={newItem.title}
-              onChange={(e) => setNewItem({ ...newItem, title: e.target.value })}
-              className="bg-transparent"
-            />
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+              <select
+                value={selectedDay}
+                onChange={(e) => setSelectedDay(e.target.value)}
+                className="px-3 py-2 border rounded-md bg-transparent"
+              >
+                {agenda.map((day) => (
+                  <option key={day.day} value={day.day}>
+                    {day.day}
+                  </option>
+                ))}
+              </select>
+              <Input
+                placeholder="Time (e.g., 09:00-10:00)"
+                value={newItem.time || ""}
+                onChange={(e) =>
+                  setNewItem({ ...newItem, time: e.target.value })
+                }
+                className="bg-transparent"
+              />
+              <Input
+                placeholder="Title"
+                value={newItem.title || ""}
+                onChange={(e) =>
+                  setNewItem({ ...newItem, title: e.target.value })
+                }
+                className="md:col-span-2 bg-transparent"
+              />
+              <Button
+                onClick={handleAddItem}
+                className="w-full"
+                disabled={!newItem.time || !newItem.title}
+              >
+                <Plus className="h-4 w-4 mr-2" />
+                Add Item
+              </Button>
+            </div>
             <div className="flex items-center space-x-4">
-              <label className="flex items-center space-x-2">
+              <label className="flex items-center space-x-2 cursor-pointer">
                 <input
                   type="checkbox"
-                  checked={newItem.requiresCheckIn}
-                  onChange={(e) => setNewItem({ ...newItem, requiresCheckIn: e.target.checked })}
+                  checked={newItem.requiresCheckIn || false}
+                  onChange={(e) =>
+                    setNewItem({
+                      ...newItem,
+                      requiresCheckIn: e.target.checked,
+                    })
+                  }
+                  className="cursor-pointer"
                 />
                 <span className="text-sm">Requires Check-in</span>
               </label>
-              <label className="flex items-center space-x-2">
+              <label className="flex items-center space-x-2 cursor-pointer">
                 <input
                   type="checkbox"
-                  checked={newItem.isParallel}
-                  onChange={(e) => setNewItem({ ...newItem, isParallel: e.target.checked })}
+                  checked={newItem.isParallel || false}
+                  onChange={(e) =>
+                    setNewItem({ ...newItem, isParallel: e.target.checked })
+                  }
+                  className="cursor-pointer"
                 />
-                <span className="text-sm">Parallel</span>
+                <span className="text-sm">Parallel Session</span>
               </label>
             </div>
-            <Button onClick={handleAddItem} className="w-full">
-              <Plus className="h-4 w-4 mr-2" />
-              Add Item
-            </Button>
           </div>
         </CardContent>
       </Card>
@@ -210,58 +292,77 @@ export default function Agenda() {
                     key={item.id}
                     className="flex items-center justify-between p-3 border rounded-lg hover:bg-muted/50"
                   >
-                    <div className="flex items-center space-x-4 flex-1">
-                      <div className="w-24 text-sm font-mono text-muted-foreground">
-                        {item.time}
+                    {editingItem === item.id && editingItemData ? (
+                      <div className="flex items-center space-x-2 flex-1">
+                        <select
+                          value={editingItemData.day}
+                          onChange={(e) =>
+                            setEditingItemData({
+                              ...editingItemData,
+                              day: e.target.value,
+                            })
+                          }
+                          className="px-2 py-1 border rounded-md bg-transparent text-sm w-24"
+                        >
+                          {agenda.map((day) => (
+                            <option key={day.day} value={day.day}>
+                              {day.day}
+                            </option>
+                          ))}
+                        </select>
+                        <Input
+                          placeholder="Time"
+                          value={editingItemData.time}
+                          onChange={(e) =>
+                            setEditingItemData({
+                              ...editingItemData,
+                              time: e.target.value,
+                            })
+                          }
+                          className="w-32 bg-transparent"
+                        />
+                        <Input
+                          placeholder="Title"
+                          value={editingItemData.title}
+                          onChange={(e) =>
+                            setEditingItemData({
+                              ...editingItemData,
+                              title: e.target.value,
+                            })
+                          }
+                          className="flex-1 bg-transparent"
+                        />
+                        <Button
+                          size="sm"
+                          onClick={handleSave}
+                          className="bg-green-600 hover:bg-green-700"
+                        >
+                          <Save className="h-4 w-4" />
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={handleCancelEdit}
+                        >
+                          <X className="h-4 w-4" />
+                        </Button>
                       </div>
-                      <div className="flex-1">
-                        {editingItem === item.id ? (
-                          <div className="flex items-center space-x-2">
-                            <Input
-                              value={item.title}
-                              onChange={(e) => {
-                                const updatedItems = agenda.map(d => 
-                                  d.day === dayData.day 
-                                    ? {
-                                        ...d,
-                                        items: d.items.map(i => 
-                                          i.id === item.id ? { ...i, title: e.target.value } : i
-                                        )
-                                      }
-                                    : d
-                                );
-                                setAgenda(updatedItems);
-                              }}
-                              className="bg-transparent"
-                            />
-                            <Button
-                              size="sm"
-                              onClick={() => handleSave(item)}
-                              className="bg-green-600 hover:bg-green-700"
-                            >
-                              <Save className="h-4 w-4" />
-                            </Button>
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={() => setEditingItem(null)}
-                            >
-                              <X className="h-4 w-4" />
-                            </Button>
-                          </div>
-                        ) : (
-                          <div className="flex items-center space-x-2">
-                            <span>{item.title}</span>
-                            {item.requiresCheckIn && (
-                              <Badge variant="secondary" className="text-xs">
-                                <CheckCircle className="h-3 w-3 mr-1" />
-                                Check-in
-                              </Badge>
-                            )}
-                          </div>
-                        )}
+                    ) : (
+                      <div className="flex items-center space-x-4 flex-1">
+                        <div className="w-32 text-sm font-mono text-muted-foreground">
+                          {item.time}
+                        </div>
+                        <div className="flex items-center space-x-2 flex-1">
+                          <span>{item.title}</span>
+                          {item.requiresCheckIn && (
+                            <Badge variant="secondary" className="text-xs">
+                              <CheckCircle className="h-3 w-3 mr-1" />
+                              Check-in
+                            </Badge>
+                          )}
+                        </div>
                       </div>
-                    </div>
+                    )}
                     <div className="flex items-center space-x-2">
                       <Button
                         size="sm"
@@ -305,58 +406,77 @@ export default function Agenda() {
                       key={item.id}
                       className="flex items-center justify-between p-3 border rounded-lg hover:bg-muted/50 bg-blue-50"
                     >
-                      <div className="flex items-center space-x-4 flex-1">
-                        <div className="w-24 text-sm font-mono text-muted-foreground">
-                          {item.time}
+                      {editingItem === item.id && editingItemData ? (
+                        <div className="flex items-center space-x-2 flex-1">
+                          <select
+                            value={editingItemData.day}
+                            onChange={(e) =>
+                              setEditingItemData({
+                                ...editingItemData,
+                                day: e.target.value,
+                              })
+                            }
+                            className="px-2 py-1 border rounded-md bg-transparent text-sm w-24"
+                          >
+                            {agenda.map((day) => (
+                              <option key={day.day} value={day.day}>
+                                {day.day}
+                              </option>
+                            ))}
+                          </select>
+                          <Input
+                            placeholder="Time"
+                            value={editingItemData.time}
+                            onChange={(e) =>
+                              setEditingItemData({
+                                ...editingItemData,
+                                time: e.target.value,
+                              })
+                            }
+                            className="w-32 bg-transparent"
+                          />
+                          <Input
+                            placeholder="Title"
+                            value={editingItemData.title}
+                            onChange={(e) =>
+                              setEditingItemData({
+                                ...editingItemData,
+                                title: e.target.value,
+                              })
+                            }
+                            className="flex-1 bg-transparent"
+                          />
+                          <Button
+                            size="sm"
+                            onClick={handleSave}
+                            className="bg-green-600 hover:bg-green-700"
+                          >
+                            <Save className="h-4 w-4" />
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            onClick={handleCancelEdit}
+                          >
+                            <X className="h-4 w-4" />
+                          </Button>
                         </div>
-                        <div className="flex-1">
-                          {editingItem === item.id ? (
-                            <div className="flex items-center space-x-2">
-                              <Input
-                                value={item.title}
-                                onChange={(e) => {
-                                  const updatedItems = agenda.map(d => 
-                                    d.day === dayData.day 
-                                      ? {
-                                          ...d,
-                                          parallel: d.parallel.map(i => 
-                                            i.id === item.id ? { ...i, title: e.target.value } : i
-                                          )
-                                        }
-                                      : d
-                                  );
-                                  setAgenda(updatedItems);
-                                }}
-                                className="bg-transparent"
-                              />
-                              <Button
-                                size="sm"
-                                onClick={() => handleSave(item)}
-                                className="bg-green-600 hover:bg-green-700"
-                              >
-                                <Save className="h-4 w-4" />
-                              </Button>
-                              <Button
-                                size="sm"
-                                variant="outline"
-                                onClick={() => setEditingItem(null)}
-                              >
-                                <X className="h-4 w-4" />
-                              </Button>
-                            </div>
-                          ) : (
-                            <div className="flex items-center space-x-2">
-                              <span>{item.title}</span>
-                              {item.requiresCheckIn && (
-                                <Badge variant="secondary" className="text-xs">
-                                  <CheckCircle className="h-3 w-3 mr-1" />
-                                  Check-in
-                                </Badge>
-                              )}
-                            </div>
-                          )}
+                      ) : (
+                        <div className="flex items-center space-x-4 flex-1">
+                          <div className="w-32 text-sm font-mono text-muted-foreground">
+                            {item.time}
+                          </div>
+                          <div className="flex items-center space-x-2 flex-1">
+                            <span>{item.title}</span>
+                            {item.requiresCheckIn && (
+                              <Badge variant="secondary" className="text-xs">
+                                <CheckCircle className="h-3 w-3 mr-1" />
+                                Check-in
+                              </Badge>
+                            )}
+                          </div>
                         </div>
-                      </div>
+                      )}
                       <div className="flex items-center space-x-2">
                         <Button
                           size="sm"

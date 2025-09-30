@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api/v1";
+  import.meta.env.VITE_API_URL || "http://localhost:3000/api/v1";
 
 // Create axios instance
 const api = axios.create({
@@ -187,18 +187,9 @@ export const adminApiClient = {
   },
 
   getCurrentUser: async (): Promise<User> => {
-    // For now, we'll get user info from localStorage since the login response stores it
-    // In a real app, you'd decode the JWT token or call a /me endpoint
-    const storedUser = localStorage.getItem("adminUser");
-    if (storedUser) {
-      try {
-        return JSON.parse(storedUser);
-      } catch (error) {
-        console.error("Error parsing stored user data:", error);
-        throw new Error("Invalid user data");
-      }
-    }
-    throw new Error("No user data found");
+    // Call the /auth/me endpoint to verify the token and get current user
+    const response = await api.get("/auth/me");
+    return response.data.data.user;
   },
 };
 

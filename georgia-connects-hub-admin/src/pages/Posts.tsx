@@ -12,12 +12,16 @@ import {
   Eye,
   Heart,
   MessageCircle,
+  Image as ImageIcon,
+  X,
 } from "lucide-react";
 
 interface Post {
   id: string;
   content: string;
   type: string;
+  mediaUrl?: string;
+  mediaType?: string;
   approvalStatus: string;
   createdAt: string;
   views: number;
@@ -46,6 +50,7 @@ export const Posts: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [totalPosts, setTotalPosts] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const statusOptions = [
     { value: "all", label: "All Posts", color: "bg-gray-100 text-gray-800" },
@@ -149,6 +154,20 @@ export const Posts: React.FC = () => {
     return new Date(dateString).toLocaleDateString();
   };
 
+  // Helper function to get the correct URL for images
+  const getImageUrl = (mediaUrl: string): string => {
+    // If the URL is already absolute (starts with http/https), return it as-is
+    if (mediaUrl.startsWith("http://") || mediaUrl.startsWith("https://")) {
+      return mediaUrl;
+    }
+
+    // For relative paths, prepend the API base URL
+    const baseUrl =
+      import.meta.env.VITE_API_URL?.replace("/api/v1", "") ||
+      "http://localhost:3000";
+    return `${baseUrl}${mediaUrl}`;
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -235,6 +254,33 @@ export const Posts: React.FC = () => {
                         <p className="text-xs text-gray-500 mt-1">
                           Type: {post.type}
                         </p>
+                        {/* Image Preview */}
+                        {post.type === "image" && post.mediaUrl && (
+                          <div className="mt-2">
+                            <div
+                              className="relative w-16 h-16 rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity"
+                              onClick={() =>
+                                setSelectedImage(getImageUrl(post.mediaUrl!))
+                              }
+                            >
+                              <img
+                                src={getImageUrl(post.mediaUrl)}
+                                alt="Post preview"
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                  const target = e.target as HTMLImageElement;
+                                  target.style.display = "none";
+                                }}
+                              />
+                              <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                                <ImageIcon className="h-4 w-4 text-white" />
+                              </div>
+                            </div>
+                            <p className="text-xs text-gray-400 mt-1">
+                              Click to view
+                            </p>
+                          </div>
+                        )}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
@@ -382,6 +428,30 @@ export const Posts: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* Image Preview Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-4xl max-h-full">
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 z-10 bg-white rounded-full p-2 hover:bg-gray-100 transition-colors"
+            >
+              <X className="h-6 w-6 text-gray-600" />
+            </button>
+            <img
+              src={selectedImage}
+              alt="Post image preview"
+              className="max-w-full max-h-full object-contain rounded-lg"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = "none";
+                toast.error("Failed to load image");
+              }}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

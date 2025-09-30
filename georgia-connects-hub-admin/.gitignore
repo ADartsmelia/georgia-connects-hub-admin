@@ -48,8 +48,4 @@ tmp/
 temp/
 
 # Admin specific
-georgia-connects-hub-admin/admin.log
-
-# Exclude embedded repositories
-georgia-connects-hub/
-georgia-connects-hub-backend/
+admin.log
