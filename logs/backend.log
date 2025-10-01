@@ -13543,3 +13543,1173 @@ Middleware setup complete - no rate limiting applied
   service: 'georgia-connects-hub',
   timestamp: '2025-09-30 17:22:38'
 }
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:31:45'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-09-30 17:31:45'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-09-30 17:31:45'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-09-30 17:31:45'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:31:45'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:31:45'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:31:45'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:31:45'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:31:45'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:31:45'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:31:54'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-09-30 17:31:54'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-09-30 17:31:54'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-09-30 17:31:54'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:31:54'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:31:54'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:31:55'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:31:55'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:31:55'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:31:55'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:35:27'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-09-30 17:35:27'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-09-30 17:35:27'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-09-30 17:35:27'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:35:27'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:35:27'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:35:27'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:35:27'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:35:27'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:35:27'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:35:49'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-09-30 17:35:49'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-09-30 17:35:49'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-09-30 17:35:49'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:35:49'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:35:49'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:35:49'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:35:49'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:35:49'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:35:49'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:36:13'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-09-30 17:36:13'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-09-30 17:36:13'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-09-30 17:36:13'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:36:13'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:36:14'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:36:14'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:36:14'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:36:14'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:36:14'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:36:17'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-09-30 17:36:17'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-09-30 17:36:17'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-09-30 17:36:17'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:36:18'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:36:18'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:36:18'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:36:18'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:36:18'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:36:18'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:39:48'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-09-30 17:39:48'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-09-30 17:39:48'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-09-30 17:39:48'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:39:48'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:39:48'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:39:48'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:39:48'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:39:48'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 17:39:48'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:03'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-09-30 18:06:03'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-09-30 18:06:03'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-09-30 18:06:03'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:03'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:03'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:03'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:03'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:03'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:03'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:04'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-09-30 18:06:04'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-09-30 18:06:04'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-09-30 18:06:04'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:05'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:05'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:05'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:05'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:05'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:05'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:08'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-09-30 18:06:08'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-09-30 18:06:08'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-09-30 18:06:08'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:08'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:08'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:08'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:08'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:08'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-09-30 18:06:08'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:40:11'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-10-01 10:40:11'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-10-01 10:40:11'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-10-01 10:40:11'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:40:11'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:40:11'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:40:11'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:40:11'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:40:11'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:40:11'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:48:26'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-10-01 10:48:26'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-10-01 10:48:26'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-10-01 10:48:26'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:48:26'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:48:26'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:48:26'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:48:26'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:48:26'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:48:26'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:48:48'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-10-01 10:48:48'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-10-01 10:48:48'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-10-01 10:48:48'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:48:48'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:48:48'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:48:48'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:48:48'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:48:48'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:48:48'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:09'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-10-01 10:49:09'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-10-01 10:49:09'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-10-01 10:49:09'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:09'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:09'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:09'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:09'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:09'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:09'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:27'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-10-01 10:49:27'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-10-01 10:49:27'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-10-01 10:49:27'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:27'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:27'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:27'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:27'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:27'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:27'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:37'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-10-01 10:49:37'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-10-01 10:49:37'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-10-01 10:49:37'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:37'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:37'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:37'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:37'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:37'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:49:37'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+API key does not start with "SG.".
+{
+  message: 'SendGrid API key not configured or invalid format',
+  level: 'warn',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:51:55'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'Current API key:',
+  timestamp: '2025-10-01 10:51:55'
+}
+{
+  service: 'georgia-connects-hub',
+  level: 'warn',
+  message: 'API key starts with SG.:',
+  timestamp: '2025-10-01 10:51:55'
+}
+{
+  service: 'georgia-connects-hub',
+  hasKey: false,
+  keyLength: 0,
+  startsWithSG: false,
+  level: 'warn',
+  message: 'Full API key check:',
+  timestamp: '2025-10-01 10:51:55'
+}
+Trust proxy setting: 1
+Middleware setup complete - no rate limiting applied
+{
+  message: 'Socket handlers initialized',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:51:55'
+}
+{
+  message: 'Database connection established successfully.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:51:55'
+}
+{
+  message: 'Database models synchronized.',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:51:55'
+}
+{
+  message: '🚀 Server running on port 3000',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:51:55'
+}
+{
+  message: '📊 Environment: development',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:51:55'
+}
+{
+  message: '🔗 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-01 10:51:55'
+}
