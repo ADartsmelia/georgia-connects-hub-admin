@@ -16839,3 +16839,15 @@ Middleware setup complete - no rate limiting applied
   service: 'georgia-connects-hub',
   timestamp: '2025-10-02 09:22:39'
 }
+{
+  message: 'SIGTERM received, shutting down gracefully',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-02 18:14:03'
+}
+{
+  message: 'Process terminated',
+  level: 'info',
+  service: 'georgia-connects-hub',
+  timestamp: '2025-10-02 18:14:03'
+}
